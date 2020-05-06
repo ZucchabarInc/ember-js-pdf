@@ -11,7 +11,7 @@ module.exports = {
       'jspdf': {
         vendor: {
           srcDir: 'dist',
-          include: ['jspdf.debug.js'],
+          include: ['jspdf.min.js'],
           processTree(input) {
             return map(input, '**/*.js', (content) => {
               /*
@@ -30,7 +30,7 @@ module.exports = {
   included() {
     this._super.included.apply(this, arguments);
     this._ensureThisImport();
-    this.import('vendor/jspdf/jspdf.debug.js');
+    this.import('vendor/jspdf/jspdf.min.js');
   },
 
   _ensureThisImport() {
